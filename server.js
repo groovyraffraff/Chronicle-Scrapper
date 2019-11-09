@@ -25,9 +25,14 @@ app.get("/saved", function(req, res) {
     res.sendFile(path.join(__dirname, "./public/review.html"));
 });
 
-
+//mongoose.connect("mongodb://localhost/google-book-app-db", { useNewUrlParser: true }); 
+// I also added useUnifiedTopology becasue it wasnt working and someone on stack overflow said it fixed the problem
+// no idea what it does
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user:dbpassword1@ds141248.mlab.com:41248/heroku_74h9t28n";
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { 
+    useUnifiedTopology: true,
+    useNewUrlParser: true 
+});
 //mongoose.connect("mongodb://localhost/google-book-app-db", { useNewUrlParser: true });
 
 //Clears home articles
