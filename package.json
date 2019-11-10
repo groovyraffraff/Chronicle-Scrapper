@@ -7,12 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "build": "npm build"
+    "build": "npm run-script build"
+
   },
+
   "repository": {
     "type": "git",
     "url": "https://github.com/groovyraffraff/Chronicle-Scrapper.git"
   },
+
   "homepage": "https://chroniclescapper.herokuapp.com/",
   "author": "",
   "license": "ISC",

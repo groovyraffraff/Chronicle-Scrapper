@@ -2,16 +2,13 @@ var express = require("express");
 var logger = require("morgan");
 var mongoose = require("mongoose");
 var path = require("path");
-
 var axios = require("axios");
 var cheerio = require("cheerio");
-
 var db = require("./models");
 var PORT = 3000;
 var app = express();
 
 app.use(logger("dev"));
-
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
@@ -28,7 +25,7 @@ app.get("/saved", function(req, res) {
 //mongoose.connect("mongodb://localhost/google-book-app-db", { useNewUrlParser: true }); 
 // I also added useUnifiedTopology becasue it wasnt working and someone on stack overflow said it fixed the problem
 // no idea what it does
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user:dbpassword1@ds141248.mlab.com:41248/heroku_74h9t28n";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://user:password1@ds141248.mlab.com:41248/heroku_74h9t28n";
 mongoose.connect(MONGODB_URI, { 
     useUnifiedTopology: true,
     useNewUrlParser: true 
